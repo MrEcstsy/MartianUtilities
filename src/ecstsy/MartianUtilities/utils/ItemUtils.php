@@ -1,5 +1,7 @@
 <?php
 
+namespace ecstsy\MartianUtilities\utils;
+
 use pocketmine\item\Item;
 use pocketmine\nbt\LittleEndianNbtSerializer;
 use pocketmine\nbt\TreeRoot;
