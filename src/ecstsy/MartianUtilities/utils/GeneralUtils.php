@@ -76,7 +76,6 @@ class GeneralUtils {
      * @return string A string representation of the time, formatted as a comma-separated
      *                list with units (e.g., '1w, 2d, 3h, 4m, 5s').
      */
-
     public static function translateTime(int $seconds): string
     {
         $timeUnits = [
