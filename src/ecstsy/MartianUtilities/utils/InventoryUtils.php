@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ecstsy\MartianUtilities\utils;
 
 use pocketmine\inventory\Inventory;
 use pocketmine\item\Item;
 
-class InventoryUtils {
+final class InventoryUtils {
 
     /**
      * Fill the borders of the inventory with gray glass.
