@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ecstsy\MartianUtilities\utils;
 
 use pocketmine\item\Item;
@@ -10,10 +12,10 @@ use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
 
-class GeneralUtils {
+final class GeneralUtils {
 
     private static array $configCache = [];
-
+    
     /**
      * Gets a configuration file from a plugin's data folder.
      *
@@ -85,7 +87,7 @@ class GeneralUtils {
             'm' => 60,
             's' => 1,
         ];
-
+        
         $parts = [];
 
         foreach ($timeUnits as $unit => $value) {
