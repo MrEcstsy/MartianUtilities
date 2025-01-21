@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace ecstsy\MartianUtilities\utils;
 
-use pocketmine\console\ConsoleCommandSender;
-use pocketmine\item\enchantment\EnchantmentInstance;
-use pocketmine\item\enchantment\StringToEnchantmentParser;
 use pocketmine\item\Item;
 use pocketmine\item\StringToItemParser;
 use pocketmine\nbt\LittleEndianNbtSerializer;
