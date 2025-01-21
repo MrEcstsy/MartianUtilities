@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ecstsy\MartianUtilities\utils;
 
 use pocketmine\entity\Entity;
@@ -9,7 +11,7 @@ use pocketmine\player\Player;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat as C;
 
-class PlayerUtils {
+final class PlayerUtils {
 
     /**
      * Returns an online player whose name begins with or equals the given string (case insensitive).

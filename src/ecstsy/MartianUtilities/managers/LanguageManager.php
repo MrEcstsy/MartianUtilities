@@ -6,7 +6,7 @@ use ecstsy\MartianUtilities\utils\GeneralUtils;
 use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 
-class LanguageManager {
+final class LanguageManager {
 
     private string $filePath;
     private Config $config;
