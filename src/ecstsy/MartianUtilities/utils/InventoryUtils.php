@@ -31,4 +31,23 @@ final class InventoryUtils {
             }
         }
     }
+
+    /**
+     * Fill the entire inventory a block, excluding the specified slots.
+     *
+     * @param Inventory $inventory
+     * @param Item      $glassType
+     * @param array     $excludedSlots
+     */
+
+    public static function fillInventory(Inventory $inventory, Item $glassType, array $excludedSlots = []): void
+    {
+        $size = $inventory->getSize();
+
+        for ($slot = 0; $slot < $size; $slot++) {
+            if (!in_array($slot, $excludedSlots)) {
+                $inventory->setItem($slot, $glassType->setCustomName(" "));
+            }
+        }
+    }
 }
