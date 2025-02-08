@@ -147,4 +147,28 @@ final class GeneralUtils {
         }
         return false;
     }
+
+    public static function parseRandomNumber(string $level): int {
+        if (preg_match('/\{(\d+)-(\d+)\}/', $level, $matches)) {
+            $min = (int) $matches[1];
+            $max = (int) $matches[2];
+            return mt_rand($min, $max);
+        }
+        return (int) $level;
+    }
+
+    public static function parseDynamicMessage(string $message): string {
+        $pattern = "/<random_word>(.*?)<\/random_word>/";
+        preg_match($pattern, $message, $matches);
+
+        if (isset($matches[1])) {
+            $wordCandidates = explode(",", $matches[1]);
+            $randomIndex = mt_rand(0, count($wordCandidates) - 1);
+            $word = $wordCandidates[$randomIndex];
+
+            return str_replace("<random_word>" . $matches[1] . "</random_word>", $word, $message);
+        }
+
+        return $message;
+    }
 }
