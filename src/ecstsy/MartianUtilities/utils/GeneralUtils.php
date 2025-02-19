@@ -148,14 +148,19 @@ final class GeneralUtils {
         return false;
     }
 
-    public static function parseRandomNumber(string $level): int {
-        if (preg_match('/\{(\d+)-(\d+)\}/', $level, $matches)) {
-            $min = (int) $matches[1];
-            $max = (int) $matches[2];
+    public static function parseRandomNumber(int|string $input): int {
+        if (is_int($input)) {
+            return $input;
+        }
+        
+        if (preg_match('/\{(\d+)-(\d+)\}/', $input, $matches)) {
+            $min = (int)$matches[1];
+            $max = (int)$matches[2];
             return mt_rand($min, $max);
         }
-        return (int) $level;
-    }
+        
+        return (int)$input;
+    }  
 
     public static function parseDynamicMessage(string $message): string {
         $pattern = "/<random_word>(.*?)<\/random_word>/";
