@@ -14,7 +14,7 @@ final class LanguageManager {
     public function __construct(Plugin $plugin, string $languageKey)
     {
         $pluginData = $plugin->getDataFolder();
-        $localeDir = $pluginData . '/locale/';
+        $localeDir = $pluginData . 'locale/';
 
         $this->filePath = $localeDir . $languageKey . '.yml';
 
