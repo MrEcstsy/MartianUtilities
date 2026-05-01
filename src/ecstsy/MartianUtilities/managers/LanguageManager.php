@@ -1,6 +1,6 @@
 <?php
 
-namespace ecstsy\MartianEnchantments\libs\ecstsy\MartianUtilities\managers;
+namespace ecstsy\MartianUtilities\managers;
 
 use ecstsy\MartianEnchantments\libs\ecstsy\MartianUtilities\utils\GeneralUtils;
 use pocketmine\plugin\Plugin;
