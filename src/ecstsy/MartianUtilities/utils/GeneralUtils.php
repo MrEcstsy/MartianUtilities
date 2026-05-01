@@ -56,6 +56,17 @@ final class GeneralUtils {
         return $config;
     }
 
+    /**
+     * Drop a cached Config so the next {@see getConfiguration()} reloads from disk (e.g. after replacing a YAML file).
+     */
+    public static function invalidateCachedConfig(string $absolutePath): void {
+        unset(self::$configCache[$absolutePath]);
+    }
+
+    public static function clearConfigurationCache(): void {
+        self::$configCache = [];
+    }
+
     public static function addParticleToPosition(Position $position, string $particleName): void {
         $world = $position->getWorld();
     
