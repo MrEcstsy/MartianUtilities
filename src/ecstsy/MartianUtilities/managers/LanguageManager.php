@@ -1,8 +1,8 @@
 <?php
 
-namespace ecstsy\MartianUtilities\managers;
+namespace ecstsy\MartianEnchantments\libs\ecstsy\MartianUtilities\managers;
 
-use ecstsy\MartianUtilities\utils\GeneralUtils;
+use ecstsy\MartianEnchantments\libs\ecstsy\MartianUtilities\utils\GeneralUtils;
 use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 
@@ -29,7 +29,11 @@ final class LanguageManager {
         return $this->config->get($key, "Translation not found: " . $key);
     }
 
-    public function getNested(string $key): mixed {
+    public function getNested(string $key, mixed $default = null): mixed {
+        if (\func_num_args() === 2) {
+            return $this->config->getNested($key, $default);
+        }
+
         return $this->config->getNested($key, "Translation not found: " . $key);
     }
     
